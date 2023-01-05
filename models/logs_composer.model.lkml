@@ -19,3 +19,5 @@ explore: airflow_logging {
     type: left_outer
   }
 }
+
+explore: dt_composer {}

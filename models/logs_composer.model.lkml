@@ -12,4 +12,10 @@ datagroup: logs_composer_default_datagroup {
 
 persist_with: logs_composer_default_datagroup
 
-explore: airflow_logging {}
+explore: airflow_logging {
+  join: lkp_dag {
+    sql_on: ${airflow_logging.dag} = ${lkp_dag.dag_txt} ;;
+    relationship: many_to_one
+    type: left_outer
+  }
+}

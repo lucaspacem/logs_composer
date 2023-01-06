@@ -71,4 +71,9 @@ view: airflow_logging {
     type: count
     drill_fields: []
   }
+
+  measure: count_dag {
+    type: count_distinct
+    sql: ${dag} ;;
+  }
 }
